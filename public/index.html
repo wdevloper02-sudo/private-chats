@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TriCall — Simple 3-User Call & Chat</title>
+<link rel="icon" type="image/png" href="logo.png" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<link rel="manifest" href="manifest.json" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="join-screen" class="screen">
+  <img src="logo.png" alt="TriCall logo" class="logo" />
+  <h1>TriCall</h1>
+  <p class="subtitle">Audio call + chat for up to 3 people</p>
+  <select id="name-input">
+    <option value="">Select your name</option>
+    <option value="manish">Manish</option>
+    <option value="razan">Razan</option>
+    <option value="aaditya">Aaditya</option>
+  </select>
+  <input id="password-input" type="password" placeholder="Password" />
+  <button id="join-btn">Join Room</button>
+  <p id="join-error" class="error"></p>
+</div>
+
+<div id="app-screen" class="screen hidden">
+  <header>
+    <img src="logo.png" alt="logo" class="logo-small" />
+    <h2>TriCall Room</h2>
+    <div id="participants"></div>
+  </header>
+
+  <main>
+    <section id="call-panel">
+      <div id="audio-container"></div>
+      <div class="controls">
+        <button id="mute-btn">🎙️ Mute</button>
+        <button id="leave-btn">📴 Leave</button>
+      </div>
+    </section>
+
+    <section id="chat-panel">
+      <div id="messages"></div>
+      <div class="chat-input-row">
+        <input id="chat-input" type="text" placeholder="Type a message..." />
+        <button id="send-btn">Send</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script src="client.js"></script>
+</body>
+</html>
